@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JSON_INPUT=$1
+JSON_INPUT=$CHANGES
 
 # Json format [{"path": "my-deployment", "service": "my-service", image: "my-image"}]
 #JSON_INPUT='[{"path": "examples/my-deplyment", "service": "my-service", "image": "my-image:v123"}]'
