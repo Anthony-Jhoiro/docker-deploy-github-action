@@ -42,13 +42,11 @@ runs:
     - id: update
       name: Update docker-compose files
       run: __action__/update-composes.sh
-      working-directory: target
       shell: bash
       env:
         CHANGES: ${{ inputs.changes }}
 
     - uses: EndBug/add-and-commit@v9
-      working-directory: target
       with:
         default_author: github_actor
         message: ${{ inputs.commit-message}}
