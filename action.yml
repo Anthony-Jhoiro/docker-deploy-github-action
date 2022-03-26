@@ -32,16 +32,12 @@ runs:
         ref: ${{ inputs.ref }}
         token: ${{ inputs.token }}
 
-    - uses: actions/checkout@v3
-      with:
-        path: __action__
-
     - uses: chrisdickinson/setup-yq@latest
     
     # --- change needed files --- #
     - id: update
       name: Update docker-compose files
-      run: __action__/update-composes.sh
+      run: update-composes.sh
       shell: bash
       env:
         CHANGES: ${{ inputs.changes }}
