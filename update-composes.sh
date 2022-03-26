@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#JSON_INPUT=$1
+JSON_INPUT=$1
 
 # Json format [{"path": "my-deployment", "service": "my-service", image: "my-image"}]
-JSON_INPUT='[{"path": "examples/my-deplyment", "service": "my-service", "image": "my-image:v123"}]'
+#JSON_INPUT='[{"path": "examples/my-deplyment", "service": "my-service", "image": "my-image:v123"}]'
 
 echo "::set-output name=message-title::*Version updated :*"
 
