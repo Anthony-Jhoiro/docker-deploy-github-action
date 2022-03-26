@@ -25,23 +25,30 @@ inputs:
 runs:
   using: "composite"
   steps:
+
     - uses: actions/checkout@v3
       with:
         repository: ${{ inputs.repo }}
         ref: ${{ inputs.ref }}
         token: ${{ inputs.token }}
 
+    - uses: actions/checkout@v3
+      with:
+        path: __action__
+
     - uses: chrisdickinson/setup-yq@latest
     
     # --- change needed files --- #
     - id: update
       name: Update docker-compose files
-      run: update-composes.sh
+      run: __action__/update-composes.sh
+      working-directory: target
       shell: bash
       env:
-        changes: ${{ inputs.changes }}
+        CHANGES: ${{ inputs.changes }}
 
     - uses: EndBug/add-and-commit@v9
+      working-directory: target
       with:
         default_author: github_actor
         message: ${{ inputs.commit-message}}
