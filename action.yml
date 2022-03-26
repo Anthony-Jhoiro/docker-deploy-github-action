@@ -36,7 +36,7 @@ runs:
     # --- change needed files --- #
     - id: update
       name: Update docker-compose files
-      run: update-composes.sh ${{ inputs.changes }}
+      run: ./update-composes.sh ${{ inputs.changes }}
       shell: bash
 
     - uses: EndBug/add-and-commit@v9
