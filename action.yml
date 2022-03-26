@@ -34,7 +34,7 @@ runs:
 
     - uses: chrisdickinson/setup-yq@latest
       with:
-        yq-version: 4.23.1
+        yq-version: v4.23.1
     
     # --- change needed files --- #
     - id: update
